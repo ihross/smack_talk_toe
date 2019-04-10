@@ -3,8 +3,7 @@
 """
 --Psuedo code--
 
-Initial Tasks:
--Present information
+Remaining Initial Tasks:
 -Set up board
 -Display board
 -Two-player functionality
@@ -29,8 +28,15 @@ class Board(object):
     # def update(self, cell, player):
 
 def welcome_msg():
-    print("Hello, Smack Talk Toe, user!")
+    print("-*- Welcome to Smack-Talk-Toe, Dear Player! -*-")
+
+
+def info():
+    print("\nYou are about to play the rather simple game of Tic Tac Toe.")
+    print("The game rules itself are traditional, but there is a twist...\n")
+    print("Prepare to be royally insulted by your computer!\n")
 
 while True:
     welcome_msg()
+    info()
     break
