@@ -25,16 +25,23 @@ class Board(object):
     # Update the baord
     # def update(self, cell, player):
 
+
+# Brief welcome message
 def welcome_msg():
     print("-*- Welcome to Smack-Talk-Toe, Dear Player! -*-")
 
 
+# Info displayed about the AI
 def info():
     print("\nYou are about to play the rather simple game of Tic Tac Toe.")
     print("The game rules itself are traditional, but there is a twist...\n")
     print("Prepare to be royally insulted by your computer!\n")
 
+
+board = Board()
+
 while True:
     welcome_msg()
     info()
+    board.display()
     break
