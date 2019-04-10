@@ -4,8 +4,6 @@
 --Psuedo code--
 
 Remaining Initial Tasks:
--Set up board
--Display board
 -Two-player functionality
 -Win/lose logic
 -Allow game to be played again
