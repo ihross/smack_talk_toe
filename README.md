@@ -1,4 +1,4 @@
-# smack_talk_toe
+# Smack-Talk-Toe
 
 A simple game of Tic Tac Toe played against an AI in the terminal
 However, there is a slight twist.
