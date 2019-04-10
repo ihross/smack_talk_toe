@@ -10,20 +10,21 @@ Remaining Initial Tasks:
 """
 
 class Board(object):
-    # Initializes list of 9 cells
+    # Initializes list of 9 squares
     def __init__(self):
-        self.cells = [" "] * 9
+        self.squares = [" "] * 9
 
     # Display the board
     def display(self):
-        print(self.cells[0], "|", self.cells[1], "|", self.cells[2])
+        print(self.squares[0], "|", self.squares[1], "|", self.squares[2])
         print("---------")
-        print(self.cells[3], "|", self.cells[4], "|", self.cells[5])
+        print(self.squares[3], "|", self.squares[4], "|", self.squares[5])
         print("---------")
-        print(self.cells[6], "|", self.cells[7], "|", self.cells[8])
+        print(self.squares[6], "|", self.squares[7], "|", self.squares[8])
 
-    # Update the baord
-    # def update(self, cell, player):
+    # Reset the board
+    def reset(self):
+        self.cells = [" "] * 9
 
 
 # Brief welcome message
@@ -38,6 +39,7 @@ def info():
     print("Prepare to be royally insulted by your computer!\n")
 
 
+# Creates object of Board class
 board = Board()
 
 while True:
