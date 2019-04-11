@@ -15,7 +15,7 @@ Remaining Initial Tasks:
 class Board(object):
     # Initializes list of 9 squares
     def __init__(self):
-        self.squares = [" "] * 9
+        self.squares = [" "]*9
 
     # Display the board
     def display(self):
@@ -27,7 +27,7 @@ class Board(object):
 
     # Reset the board
     def reset(self):
-        self.cells = [" "] * 9
+        self.cells = [" "]*9
 
     # Check for winner
     def winner_check(self, letter):
@@ -110,7 +110,7 @@ def play_again():
         if again == "yes":
             return True
         elif again == "no":
-            print("\nPfft! Giving up already...")
+            print("\nPfft! Giving up already...\n")
             return False
         else:
             print("That was not a valid input! Try again!\n")  
@@ -141,4 +141,4 @@ while True:
 
     break
 
-print("\nThanks for playing anyway, loser!")
+print("\nThanks for playing anyway, loser!\n")
