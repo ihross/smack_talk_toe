@@ -5,8 +5,11 @@
 
 Remaining Initial Tasks:
 -Two-player functionality
--Draw logic
--Allow game to be played again
+-Replace 2nd player with AI
+-AI analysis of position
+-Write smack talking statements
+-Apply smack talking to analysis
+
 """
 
 class Board(object):
@@ -107,7 +110,7 @@ def play_again():
         if again == "yes":
             return True
         elif again == "no":
-            print("\nUnderstandable. One can only play so much Tic Tac Toe in a day!")
+            print("\nPfft! Giving up already...")
             return False
         else:
             print("That was not a valid input! Try again!\n")  
@@ -138,4 +141,4 @@ while True:
 
     break
 
-print("Thanks for playing, loser!")
+print("\nThanks for playing anyway, loser!")
