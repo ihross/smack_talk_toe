@@ -61,6 +61,23 @@ class Board(object):
         else:
             return False
 
+
+class Player(object):
+    # Sets up player class
+    def __init__(self, human_or_ai, letter):
+        self.human_or_ai = human_or_ai
+        self.letter = letter
+        self.score = 0
+
+    # Naming this instance of a player
+    def set_name(self, name):
+        self.name = name
+
+        print("What name would you like to give this player?")
+        name = input()
+        print("{} it is!".format(name))
+
+
 # Brief welcome message
 def welcome_msg():
     print("-*- Welcome to Smack-Talk-Toe, Dear Player! -*-")
@@ -73,11 +90,17 @@ def info():
     print("Prepare to be royally insulted by your computer!\n")
 
 
+# Temporary global variables for testing
+human = "Human"
+ai = "AI"
+
 # Creates object of Board class
 board = Board()
+human = Player(human, "X")
 
 while True:
     welcome_msg()
     info()
+    human.set_name("Player")
     board.display()
     break
