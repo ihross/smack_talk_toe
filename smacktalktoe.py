@@ -70,13 +70,20 @@ class Player(object):
         self.score = 0
 
     # Naming this instance of a player
-    def set_name(self, name):
-        self.name = name
+    def set_player_name(self, player_name):
+        self.name = player_name
 
-        print("What name would you like to give this player?")
-        name = input()
-        print("{} it is!".format(name))
+        print("What is your name?")
+        player_name = input()
+        print("Welcome to the hardest challenge of your life, {}!".format(player_name))
 
+    # Naming the AI
+    def set_ai_name(self, ai_name):
+        self.name = ai_name
+
+        print("What would you like to call me?")
+        ai_name = input()
+        print("Fine, you can call me {}. You're gonna lose anyway!".format(ai_name))
 
 # Brief welcome message
 def welcome_msg():
@@ -90,17 +97,45 @@ def info():
     print("Prepare to be royally insulted by your computer!\n")
 
 
-# Temporary global variables for testing
-human = "Human"
-ai = "AI"
+# Choose to play again
+def play_again():
+    again = ""
+    while not again == "yes" or again == "no":
+        print("\nReady for another round? (Yes/No) : ")
+        again = input().lower()
 
-# Creates object of Board class
-board = Board()
-human = Player(human, "X")
+        if again == "yes":
+            return True
+        elif again == "no":
+            print("\nUnderstandable. One can only play so much Tic Tac Toe in a day!")
+            return False
+        else:
+            print("That was not a valid input! Try again!\n")  
 
+# Start of program
 while True:
-    welcome_msg()
-    info()
-    human.set_name("Player")
-    board.display()
+    # Temporary global variables for testing
+    human = "Human"
+    ai = "AI"
+    playing_game = True
+
+    # Creates object of Board class
+    board = Board()
+    human = Player(human, "X")
+    comp = Player(ai, "O")
+
+    while playing_game:
+        welcome_msg()
+        info()
+
+        human.set_player_name(human)
+        comp.set_ai_name(ai)
+
+        board.display()
+
+        if not play_again():
+            playing_game = False
+
     break
+
+print("Thanks for playing, loser!")
