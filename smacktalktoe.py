@@ -5,7 +5,7 @@
 
 Remaining Initial Tasks:
 -Two-player functionality
--Win/lose logic
+-Draw logic
 -Allow game to be played again
 """
 
@@ -26,6 +26,40 @@ class Board(object):
     def reset(self):
         self.cells = [" "] * 9
 
+    # Check for winner
+    def winner_check(self, letter):
+        # Horizontal combos
+        if self.squares[0] == letter and self.squares[1] == letter and self.squares[2] == letter:
+            return True
+        if self.squares[3] == letter and self.squares[4] == letter and self.squares[5] == letter:
+            return True
+        if self.squares[6] == letter and self.squares[7] == letter and self.squares[8] == letter:
+            return True
+
+        # Vertical combos
+        if self.squares[0] == letter and self.squares[3] == letter and self.squares[6] == letter:
+            return True
+        if self.squares[1] == letter and self.squares[4] == letter and self.squares[7] == letter:
+            return True
+        if self.squares[2] == letter and self.squares[5] == letter and self.squares[8] == letter:
+            return True
+
+        # Diagonal combos
+        if self.squares[0] == letter and self.squares[4] == letter and self.squares[8] == letter:
+            return True
+        if self.squares[6] == letter and self.squares[4] == letter and self.squares[2] == letter:
+            return True
+
+    # Check for draw
+    def draw_check(self):
+        taken = 0
+        for square in self.squares:
+            if square != " ":
+                taken += 1
+        if taken == 9:
+            return True
+        else:
+            return False
 
 # Brief welcome message
 def welcome_msg():
