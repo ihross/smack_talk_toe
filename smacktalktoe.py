@@ -90,7 +90,7 @@ class Player(object):
 
 # Brief welcome message
 def welcome_msg():
-    print("-*- Welcome to Smack-Talk-Toe, Dear Player! -*-")
+    print("-*- Welcome to Smack-Talk-Toe, My Dear Victim! -*-")
 
 
 # Info displayed about the AI
@@ -110,7 +110,7 @@ def play_again():
         if again == "yes":
             return True
         elif again == "no":
-            print("\nPfft! Giving up already...\n")
+            print("\nPfft! Giving up already...")
             return False
         else:
             print("That was not a valid input! Try again!\n")  
