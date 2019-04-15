@@ -25,9 +25,14 @@ class Board(object):
         print("---------")
         print(self.squares[6], "|", self.squares[7], "|", self.squares[8])
 
+    # Update after move
+    def update(self, square, letter):
+        if self.squares[square] == " ":
+            self.squares[square] == letter
+
     # Reset the board
     def reset(self):
-        self.cells = [" "]*9
+        self.squares = [" "]*9
 
     # Check for winner
     def winner_check(self, letter):
@@ -72,13 +77,15 @@ class Player(object):
         self.letter = letter
         self.score = 0
 
-    # Naming this instance of a player
-    def set_player_name(self, player_name):
-        self.name = player_name
+    # Naming this instance of a human
+    def set_human_name(self, human_name):
+        self.name = human_name
 
         print("What is your name?")
-        player_name = input()
-        print("Welcome to the hardest challenge of your life, {}!".format(player_name))
+        human_name = input()
+        print("Welcome to the hardest challenge of your life, {}!".format(human_name))
+
+        return human_name
 
     # Naming the AI
     def set_ai_name(self, ai_name):
@@ -86,7 +93,9 @@ class Player(object):
 
         print("What would you like to call me?")
         ai_name = input()
-        print("Fine, you can call me {}. You're gonna lose anyway!".format(ai_name))
+        print("Fine, you can call me {}. You're gonna lose anyway!\n".format(ai_name))
+
+        return ai_name
 
 # Brief welcome message
 def welcome_msg():
@@ -98,6 +107,16 @@ def info():
     print("\nYou are about to play the rather simple game of Tic Tac Toe.")
     print("The game rules itself are traditional, but there is a twist...\n")
     print("Prepare to be royally insulted by your computer!\n")
+
+
+# Retrieve move from player
+def get_move():
+    print("\nType which square you'd like to fill on the board")
+    print("1 is the top left, 5 is the middle, and 9 is the bottom right \n")
+
+    # Represented as 1 - 9 as it is easier for the user than 0 - 8
+    square = int(input("\nWhich square do you choose? (1 - 9) : "))
+    return (square - 1)
 
 
 # Choose to play again
@@ -128,13 +147,26 @@ while True:
     comp = Player(ai, "O")
 
     while playing_game:
+        # Intro Messages
         welcome_msg()
         info()
 
-        human.set_player_name(human)
+        # Estasblishing human/computer names
+        human.set_human_name(human)
         comp.set_ai_name(ai)
 
         board.display()
+        player_move = get_move()
+        board.update(player_move, "X")
+        board.display()
+
+
+        # if not board.winner_check(human.letter):
+        #     board.update(player_move, human.letter)
+        #     board.display()
+
+
+
 
         if not play_again():
             playing_game = False
