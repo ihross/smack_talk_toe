@@ -157,6 +157,8 @@ while True:
 
         board.display()
         player_move = get_move()
+
+        # TODO Fix so update() does displays the updated board properly
         board.update(player_move, "X")
         board.display()
 
