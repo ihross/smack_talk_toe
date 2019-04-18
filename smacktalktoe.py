@@ -163,13 +163,9 @@ while True:
         board.display()
 
 
-        # if not board.winner_check(human.letter):
-        #     board.update(player_move, human.letter)
-        #     board.display()
 
 
-
-
+        # Choosing to start the game over or not
         if not play_again():
             playing_game = False
 
