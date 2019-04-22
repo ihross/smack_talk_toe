@@ -160,6 +160,7 @@ while True:
 
         # TODO Fix so update() does displays the updated board properly
         board.update(player_move, "X")
+        # TODO Display shouldn't show unmodified board
         board.display()
 
 
