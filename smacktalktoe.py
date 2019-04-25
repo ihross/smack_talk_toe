@@ -34,7 +34,7 @@ class Board(object):
     def reset(self):
         self.squares = [" "]*9
 
-    # Check for winner
+    # Check for winner with the 8 possible combos
     def winner_check(self, letter):
         # Horizontal combos
         if self.squares[0] == letter and self.squares[1] == letter and self.squares[2] == letter:
