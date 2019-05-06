@@ -35,9 +35,9 @@ def choose_turn():
         turn = input().upper()
 
         if turn == "F":
-            return ["X", "O"]
+            return 1
         elif turn == "S":
-            return ["O", "X"]
+            return 2
         else:
             print("That was not a valid input! Try again!\n")
 
@@ -138,12 +138,15 @@ while True:
     board = make_board()
     taken_squares = []
 
-    # Turn is 1 for starting turn, 2 for second, and alternates
-    turn = 1
+    # Is either 1 or 2 depending on player's choice
+    turn = choose_turn()
 
-    # Establishing which player gets X or O
-    first_turn, second_turn = choose_turn()
-    print(first_turn + " goes first!\n")
+    if turn == 1:
+        print("You're lucky enough to go first. You'll need it.")
+    elif turn == 2:
+        print("The mighty AI goes first! Bow before me!")
+
+    first_turn, second_turn = ['X', 'O']
     playing_game = True
 
     # Game loop
