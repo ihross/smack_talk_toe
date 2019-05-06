@@ -52,7 +52,7 @@ def play_again():
         if again == "yes":
             return True
         elif again == "no":
-            print("\nPfft! Whatever...")
+            print("\nPfft! Whatever.")
             return False
         else:
             print("That was not a valid input! Try again!\n")    
