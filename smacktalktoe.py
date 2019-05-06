@@ -31,7 +31,7 @@ def choose_turn():
 
     # Checks if input is an X or an O. Tries again if it is not
     while not turn == "F" or turn == "S":
-        print("Would you like to go first or second? (F for first / S for second): ")
+        print("Would you like to go First or Second? (F for First / S for Second): ")
         turn = input().upper()
 
         if turn == "F":
