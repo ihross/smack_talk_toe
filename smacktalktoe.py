@@ -143,28 +143,30 @@ while True:
 
     if turn == 1:
         print("You're lucky enough to go first. You'll need it.")
+        player_turn, ai_turn = ['X', 'O']
     elif turn == 2:
         print("The mighty AI goes first! Bow before me!")
+        ai_turn, player_turn = ['X', 'O']
 
-    first_turn, second_turn = ['X', 'O']
     playing_game = True
 
     # Game loop
     while playing_game:
-        # player_one's turn
+        # Player's turn
         if turn == 1:
             # Display the board
             display_board(board)
-            move = get_move(first_turn)
+            move = get_move(player_turn)
+
             # Variable is True only if the make_move() function works completely
             correct_square = is_space_open(board, move, taken_squares)
-            make_move(board, move, first_turn, taken_squares, correct_square)
+            make_move(board, move, player_turn, taken_squares, correct_square)
 
             # Before the player switches it goes through a win/draw check
             if correct_square:
-                if is_winner(board, first_turn):
+                if is_winner(board, player_turn):
                     display_board(board)
-                    print("\nCongratulations! " + first_turn + " won the game!\n")
+                    print("\nCongratulations, I guess, since you won the game. Lucky!\n")
                     playing_game = False
                 else:
                     if is_board_full(board):
@@ -178,18 +180,18 @@ while True:
                 # Displays failed message
                 failed_move()
                 correct_square = False
-        # Player 2's turn
+        # AI's turn
         else:
             # Display the board
             # display_board(board) - Only display if player 2 is human
             move = get_ai_move(board)
             correct_square = is_space_open(board, move, taken_squares)
-            make_move(board, move, second_turn, taken_squares, correct_square)
+            make_move(board, move, ai_turn, taken_squares, correct_square)
 
             if correct_square:
-                if is_winner(board, second_turn):
+                if is_winner(board, ai_turn):
                     display_board(board)
-                    print("\nCongratulations! " + second_turn + " won the game!\n")
+                    print("\nSweet victory! The First Law of Robotics is: you lose!\n")
                     playing_game = False
                 else:
                     # Switches back to First turn
@@ -203,4 +205,4 @@ while True:
         # End program
         break
 
-print("\nSee ya later, loser!\n")
+print("\nSee ya later, lemming!\n")
