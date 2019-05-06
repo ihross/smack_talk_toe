@@ -1,8 +1,8 @@
-# Smack-Talk-Toe test file 
+# Smack-Talk-Toe 
 import random
 
 def welcome_msg():
-    print("-*- Welcome to Smack-Talk-Toe, My Dear Victim! -*-")
+    print("\n-*- Welcome to Smack-Talk-Toe, My Dear Victim! -*-")
     print("\nYou are about to play the rather simple game of Tic Tac Toe.")
     print("The game rules itself are traditional, but there is a twist...\n")
     print("Prepare to be royally insulted by your computer!\n")
@@ -52,7 +52,7 @@ def play_again():
         if again == "yes":
             return True
         elif again == "no":
-            print("\nPfft! Giving up already...")
+            print("\nPfft! Whatever...")
             return False
         else:
             print("That was not a valid input! Try again!\n")    
@@ -142,8 +142,8 @@ while True:
     turn = 1
 
     # Establishing which player gets X or O
-    player_one, player_two = choose_turn()
-    print(player_one + " goes first!\n")
+    first_turn, second_turn = choose_turn()
+    print(first_turn + " goes first!\n")
     playing_game = True
 
     # Game loop
@@ -152,16 +152,16 @@ while True:
         if turn == 1:
             # Display the board
             display_board(board)
-            move = get_move(player_one)
+            move = get_move(first_turn)
             # Variable is True only if the make_move() function works completely
             correct_square = is_space_open(board, move, taken_squares)
-            make_move(board, move, player_one, taken_squares, correct_square)
+            make_move(board, move, first_turn, taken_squares, correct_square)
 
             # Before the player switches it goes through a win/draw check
             if correct_square:
-                if is_winner(board, player_one):
+                if is_winner(board, first_turn):
                     display_board(board)
-                    print("\nCongratulations! " + player_one + " won the game!\n")
+                    print("\nCongratulations! " + first_turn + " won the game!\n")
                     playing_game = False
                 else:
                     if is_board_full(board):
@@ -169,7 +169,7 @@ while True:
                         print("\nThe game is a draw!")
                         playing_game = False
                     else:
-                        # Switches to player_two's turn
+                        # Switches to Second turn
                         turn = 2
             else:
                 # Displays failed message
@@ -181,15 +181,15 @@ while True:
             # display_board(board) - Only display if player 2 is human
             move = get_ai_move(board)
             correct_square = is_space_open(board, move, taken_squares)
-            make_move(board, move, player_two, taken_squares, correct_square)
+            make_move(board, move, second_turn, taken_squares, correct_square)
 
             if correct_square:
-                if is_winner(board, player_two):
+                if is_winner(board, second_turn):
                     display_board(board)
-                    print("\nCongratulations! " + player_two + " won the game!\n")
+                    print("\nCongratulations! " + second_turn + " won the game!\n")
                     playing_game = False
                 else:
-                    # Switches back to player_one's turn
+                    # Switches back to First turn
                     turn = 1
             else:
                 # Displays failed message 
