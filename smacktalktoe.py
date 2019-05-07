@@ -155,7 +155,6 @@ def evaluate(turn):
 # Minimax algorithm for AI
 def minimax(state, depth, turn, board, correct_square, full_board):
     if correct_square and not full_board:
-
         if turn == 2:
             best_move = [-1, -1, -infinity]
         else:
@@ -178,6 +177,7 @@ def minimax(state, depth, turn, board, correct_square, full_board):
                     best_move = score # Min value
 
     return best_move
+
 
 def failed_move():
     print("Sorry, that square isn't available!\n")
