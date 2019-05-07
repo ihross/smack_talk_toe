@@ -3,6 +3,7 @@ from math import inf as infinity
 import random
 
 
+# Message displayed at the start of every new game
 def welcome_msg():
     print("\n-*- Welcome to Smack-Talk-Toe, My Dear Victim! -*-")
     print("\nYou are about to play the rather simple game of Tic Tac Toe.")
@@ -11,10 +12,10 @@ def welcome_msg():
 
 
 def make_board():
-                            # Representation
-    board = [" ", " ", " ",  # [0, 1, 2,
+                               # Representation
+    board = [" ", " ", " ",    #[ 0, 1, 2,
              " ", " ", " ",     # 3, 4, 5,
-             " ", " ", " "]     # 6, 7, 8]
+             " ", " ", " "]     # 6, 7, 8 ]
     return board
 
 
@@ -47,6 +48,7 @@ def choose_turn():
 # Allows user to start the program over after game is complete
 def play_again():
     again = ""
+
     while not again == "yes" or again == "no":
         print("\nReady for another round? (Yes/No) : ")
         again = input().lower()
