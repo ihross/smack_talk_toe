@@ -192,9 +192,15 @@ while True:
                     display_board(board)
                     print("\nSweet victory! The First Law of Robotics is: you lose!\n")
                     playing_game = False
+                
                 else:
-                    # Switches back to First turn
-                    turn = 1
+                    if is_board_full(board):
+                        display_board(board)
+                        print("\nThe game is a draw!")
+                        playing_game = False
+                    else:
+                        # Switches back to First turn
+                        turn = 1
             else:
                 # Displays failed message 
                 correct_square = False
