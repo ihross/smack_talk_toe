@@ -182,8 +182,7 @@ while True:
                 correct_square = False
         # AI's turn
         else:
-            # Display the board
-            # display_board(board) - Only display if player 2 is human
+            # Get the AI's move and make it
             move = get_ai_move(board)
             correct_square = is_space_open(board, move, taken_squares)
             make_move(board, move, ai_turn, taken_squares, correct_square)
