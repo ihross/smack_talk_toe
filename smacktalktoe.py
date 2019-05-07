@@ -1,5 +1,7 @@
 # Smack-Talk-Toe 
+from math import inf as infinity
 import random
+
 
 def welcome_msg():
     print("\n-*- Welcome to Smack-Talk-Toe, My Dear Victim! -*-")
@@ -124,6 +126,58 @@ def get_ai_move(board):
             indices.append(index)
     return random.choice(indices)
 
+
+def empty_cells(state):
+    cells = []
+
+    for x, row in enumerate(state):
+        for y, cell in enumerate(row):
+            if cell == " ":
+                cells.append([x, y])
+
+    return cells
+
+
+# Evaluating the state of the board for AI
+def evaluate(turn):
+    # If AI's turn
+    if turn == 2:
+        score = +1
+    # If human's turn
+    elif turn == 1:
+        score = -1
+    else:
+        score = 0
+
+    return score
+
+
+# Minimax algorithm for AI
+def minimax(state, depth, turn, board, correct_square, full_board):
+    if correct_square and not full_board:
+
+        if turn == 2:
+            best_move = [-1, -1, -infinity]
+        else:
+            best_move = [-1, -1, +infinity]
+
+        if depth == 0:
+            score = evaluate(turn)
+            return [-1, -1, score]
+
+        for cell in empty_cells(state):
+            x, y = cell[0], cell[1]
+            state[x][y] = 0
+            score[0], score [1] = x, y
+    
+            if turn == 2:
+                if score[2] > best_move[2]:
+                    best_move = score # Max value
+            else:
+                if score[2] < best_move[2]:
+                    best_move = score # Min value
+
+    return best_move
 
 def failed_move():
     print("Sorry, that square isn't available!\n")
