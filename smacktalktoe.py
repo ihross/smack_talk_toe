@@ -129,6 +129,7 @@ def get_ai_move(board):
     return random.choice(indices)
 
 
+# Checking the empty state of the cells
 def empty_cells(state):
     cells = []
 
