@@ -259,8 +259,6 @@ while True:
                     else:
                         # Switches back to player's turn
                         turn = 1
-            else:
-                correct_square = False
 
     # Option to start program over again
     if not play_again():
