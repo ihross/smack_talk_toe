@@ -232,7 +232,7 @@ while True:
                         print("\nThe game is a draw!")
                         playing_game = False
                     else:
-                        # Switches to Second turn
+                        # Switches to AI's turn
                         turn = 2
             else:
                 # Displays failed message
@@ -257,7 +257,7 @@ while True:
                         print("\nThe game is a draw!")
                         playing_game = False
                     else:
-                        # Switches back to First turn
+                        # Switches back to player's turn
                         turn = 1
             else:
                 correct_square = False
