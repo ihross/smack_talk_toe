@@ -142,6 +142,7 @@ def empty_cells(state):
 
 
 # Evaluating the state of the board for AI
+# TODO: Evaluate function encompasses Minimax algorithm AND evaluation?
 def evaluate(turn):
     # If AI's turn
     if turn == 2:
