@@ -260,7 +260,6 @@ while True:
                         # Switches back to First turn
                         turn = 1
             else:
-                # Displays failed message 
                 correct_square = False
 
     # Option to start program over again
