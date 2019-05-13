@@ -20,6 +20,7 @@ def make_board():
 
 
 # Displays a created board in its current state
+# Cells are empty strings
 def display_board(board):
     print(board[0], "|", board[1], "|", board[2])
     print("---------")
