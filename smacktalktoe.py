@@ -38,6 +38,7 @@ def choose_turn():
         print("Would you like to go First or Second? (F for First / S for Second): ")
         turn = input().upper()
 
+        # F or S determines if player or AI goes first
         if turn == "F":
             return 1
         elif turn == "S":
