@@ -55,6 +55,7 @@ def play_again():
         print("\nReady for another round? (Yes/No) : ")
         again = input().lower()
 
+        # Snarky answer given if no
         if again == "yes":
             return True
         elif again == "no":
