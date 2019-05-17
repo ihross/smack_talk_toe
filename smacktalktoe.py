@@ -1,4 +1,5 @@
 # Smack-Talk-Toe 
+# Single player Tic-Tac-Toe game against a trash-talking AI
 from math import inf as infinity
 import random
 
