@@ -32,6 +32,7 @@ def display_board(board):
 
 # Whether the first letter in the game is an X or O
 def choose_turn():
+    # turn starts as empty so the prompt repeats if "F" or "S" are not entered
     turn = ""
 
     # Checks if input is an X or an O. Tries again if it is not
