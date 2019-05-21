@@ -126,7 +126,7 @@ def make_move(board, square, letter, taken, open_square):
         taken.append(square)
         board[square] = letter
 
-# AI move is returned based on a random choice from remaining empty squares
+# AI move based on a random choice from remaining empty squares
 def get_ai_move(board):
     indices = []
     for index, val in enumerate(board):
