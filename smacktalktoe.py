@@ -110,6 +110,7 @@ def is_board_full(board):
 
 
 # Gets integer input from player
+# Though its represented as 'letter'
 def get_move(letter):
     print("\nType which square you'd like to fill on the board")
     print("1 is the top left, 5 is the middle, and 9 is the bottom right \n")
