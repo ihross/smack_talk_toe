@@ -1,5 +1,10 @@
-# Smack-Talk-Toe 
-# Single player Tic-Tac-Toe game against a trash-talking AI
+"""
+Smack-Talk-Toe 
+Single player Tic-Tac-Toe game against a trash-talking AI
+AI analyzes the state of the board and trash talks to based on the analysis
+Can play multiple times
+"""
+
 from math import inf as infinity
 import random
 
