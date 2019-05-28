@@ -17,6 +17,7 @@ def welcome_msg():
     print("Prepare to be royally insulted by your computer!\n")
 
 
+# Board is made of empty strings
 def make_board():
                                # Representation
     board = [" ", " ", " ",    #[ 0, 1, 2,
