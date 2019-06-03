@@ -277,4 +277,4 @@ while True:
         # End program
         break
 
-print("\nSee ya later, lemming!\n")
+print("\nSee ya later, you inferior lemming!\n")
