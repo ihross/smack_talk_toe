@@ -142,57 +142,56 @@ def get_ai_move(board):
 
 
 # Checking the empty state of the cells
-def empty_cells(state):
-    cells = []
+def empty_squares(state):
+    squares = []
 
     for x, row in enumerate(state):
-        for y, cell in enumerate(row):
-            if cell == " ":
-                cells.append([x, y])
+        for y, squares in enumerate(row):
+            if squares == " ":
+                squares.append([x, y])
 
-    return cells
-
-
-# Evaluating the state of the board for AI
-# TODO: Evaluate function encompasses Minimax algorithm AND evaluation?
-def evaluate(turn):
-    # If AI's turn
-    if turn == 2:
-        score = +1
-    # If human's turn
-    elif turn == 1:
-        score = -1
-    else:
-        score = 0
-
-    return score
+    return squares
 
 
-# Minimax algorithm for AI
-def minimax(state, depth, turn, board, correct_square, full_board):
-    if correct_square and not full_board:
+# Getting the current score for AI
+def get_score_for_ai(board, ai_wins, turn):
+    # If the AI will win
+    if ai_wins:
         if turn == 2:
-            best_move = [-1, -1, -infinity]
-        else:
-            best_move = [-1, -1, +infinity]
+            return 1
+    # If the player will win
+    elif ai_wins == False:
+        if turn == 1:
+            return -1
+    # Result will be a draw
+    return 0 
 
-        if depth == 0:
-            score = evaluate(turn)
-            return [-1, -1, score]
 
-        for cell in empty_cells(state):
-            x, y = cell[0], cell[1]
-            state[x][y] = 0
-            score[0], score [1] = x, y
+# # Minimax algorithm for AI
+# def minimax(state, depth, turn, board, correct_square, full_board):
+#     if correct_square and not full_board:
+#         if turn == 2:
+#             best_move = [-1, -1, -infinity]
+#         else:
+#             best_move = [-1, -1, +infinity]
+
+#         if depth == 0:
+#             score = evaluate(turn)
+#             return [-1, -1, score]
+
+#         for cell in empty_cells(state):
+#             x, y = cell[0], cell[1]
+#             state[x][y] = 0
+#             score[0], score [1] = x, y
     
-            if turn == 2:
-                if score[2] > best_move[2]:
-                    best_move = score # Max value
-            else:
-                if score[2] < best_move[2]:
-                    best_move = score # Min value
+#             if turn == 2:
+#                 if score[2] > best_move[2]:
+#                     best_move = score # Max value
+#             else:
+#                 if score[2] < best_move[2]:
+#                     best_move = score # Min value
 
-    return best_move
+#     return best_move
 
 
 def failed_move():
