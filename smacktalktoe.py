@@ -7,6 +7,7 @@ Can play multiple times
 
 from math import inf as infinity
 import random
+from insults import insults
 
 
 # Message displayed at the start of every new game
