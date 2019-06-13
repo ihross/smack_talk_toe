@@ -154,6 +154,9 @@ def empty_squares(state):
     return squares
 
 
+def insult_player():
+    print("\n -" + random.choice(insults) +"- \n")
+
 
 def failed_move():
     print("Sorry, that square isn't available!\n")
@@ -205,6 +208,7 @@ while True:
                         playing_game = False
                     else:
                         # Switches to AI's turn
+                        insult_player()
                         turn = 2
             else:
                 # Displays failed message
