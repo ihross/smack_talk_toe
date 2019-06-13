@@ -142,10 +142,12 @@ def get_ai_move(board):
     return random.choice(indices)
 
 
+# Prints random insult from insults.py 
 def insult_player():
     print("\n -" + random.choice(insults) +"- \n")
 
 
+# Displays when player input for a square is incorrect
 def failed_move():
     print("Sorry, that square isn't available!\n")
 
