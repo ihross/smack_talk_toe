@@ -142,18 +142,6 @@ def get_ai_move(board):
     return random.choice(indices)
 
 
-# Checking the empty state of the cells
-def empty_squares(state):
-    squares = []
-
-    for x, row in enumerate(state):
-        for y, squares in enumerate(row):
-            if squares == " ":
-                squares.append([x, y])
-
-    return squares
-
-
 def insult_player():
     print("\n -" + random.choice(insults) +"- \n")
 
