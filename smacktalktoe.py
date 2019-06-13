@@ -154,46 +154,6 @@ def empty_squares(state):
     return squares
 
 
-# Getting the current score for AI
-def get_score_for_ai(board, ai_wins, turn):
-    # If the AI will win
-    if ai_wins:
-        if turn == 2:
-            return 1
-    # If the player will win
-    elif ai_wins == False:
-        if turn == 1:
-            return -1
-    # Result will be a draw
-    return 0 
-
-
-# # Minimax algorithm for AI
-# def minimax(state, depth, turn, board, correct_square, full_board):
-#     if correct_square and not full_board:
-#         if turn == 2:
-#             best_move = [-1, -1, -infinity]
-#         else:
-#             best_move = [-1, -1, +infinity]
-
-#         if depth == 0:
-#             score = evaluate(turn)
-#             return [-1, -1, score]
-
-#         for cell in empty_cells(state):
-#             x, y = cell[0], cell[1]
-#             state[x][y] = 0
-#             score[0], score [1] = x, y
-    
-#             if turn == 2:
-#                 if score[2] > best_move[2]:
-#                     best_move = score # Max value
-#             else:
-#                 if score[2] < best_move[2]:
-#                     best_move = score # Min value
-
-#     return best_move
-
 
 def failed_move():
     print("Sorry, that square isn't available!\n")
